@@ -1,0 +1,9 @@
+.PHONY: build doc fmt lint run test vendor_clean vendor_get vendor_update vet
+
+# 用来生成runtime环境的docker
+
+
+default: build
+
+build:
+	docker build -t dev.docker.pt.xiaomi.com/miot/runtime-binary-init:latest .

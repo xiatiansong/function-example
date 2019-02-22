@@ -1,0 +1,488 @@
+{
+  "2": {
+    "RemoteId": "2",
+    "Frequency": "38000",
+    "CmdLen": "230",
+    "OnoffArray": "204",
+    "TempArray": "22,24,26,28",
+    "ModelArray": "70,72,118,120,122",
+    "WindSpeedArray": "86,88,90"
+  },
+  "77": {
+    "RemoteId": "77",
+    "Frequency": "38000",
+    "CmdLen": "236",
+    "OnoffArray": "38,40,46,48,156,158,164,166",
+    "TempArray": "86,88,90,92,94,96,98,100,204,206,208,210,212,214,216,218",
+    "ModelArray": "38,40,46,48,156,158,164,166",
+    "WindSpeedArray": "58,60,66,68,176,178,184,186"
+  },
+  "777": {
+    "RemoteId": "777",
+    "Frequency": "38000",
+    "CmdLen": "74",
+    "OnoffArray": "10",
+    "TempArray": "20,22,24,26",
+    "ModelArray": "4,6,8",
+    "WindSpeedArray": "12,14"
+  },
+  "1752": {
+    "RemoteId": "1752",
+    "Frequency": "38690",
+    "CmdLen": "228",
+    "OnoffArray": "88",
+    "TempArray": "116,118,120,122",
+    "ModelArray": "100,102,104",
+    "WindSpeedArray": "132,134,136"
+  },
+  "2587": {
+    "RemoteId": "2587",
+    "Frequency": "38000",
+    "CmdLen": "440",
+    "OnoffArray": "216",
+    "TempArray": "234,236,238,240",
+    "ModelArray": "224,226,228",
+    "WindSpeedArray": "272,274,276,278"
+  },
+  "2607": {
+    "RemoteId": "2607",
+    "Frequency": "38000",
+    "CmdLen": "140",
+    "OnoffArray": "10",
+    "TempArray": "20,22,24,26",
+    "ModelArray": "4,6,8",
+    "WindSpeedArray": "12,14"
+  },
+  "2609": {
+    "RemoteId": "2609",
+    "Frequency": "38500",
+    "CmdLen": "84",
+    "OnoffArray": "28",
+    "TempArray": "52,54,56,58,60,62,74",
+    "ModelArray": "36,38,40",
+    "WindSpeedArray": "46,48"
+  },
+  "2616": {
+    "RemoteId": "2616",
+    "Frequency": "38000",
+    "CmdLen": "200",
+    "OnoffArray": "36,38,40,46,68,70,72,76,78",
+    "TempArray": "68,70,72,74",
+    "ModelArray": "76,78",
+    "WindSpeedArray": "36,38,40"
+  },
+  "2618": {
+    "RemoteId": "2618",
+    "Frequency": "38000",
+    "CmdLen": "200",
+    "OnoffArray": "36,38,40,46,68,70,72,76,78",
+    "TempArray": "68,70,72,74",
+    "ModelArray": "76,78",
+    "WindSpeedArray": "36,38,40"
+  },
+  "2807": {
+    "RemoteId": "2807",
+    "Frequency": "38000",
+    "CmdLen": "228",
+    "OnoffArray": "88",
+    "TempArray": "116,118,120,122",
+    "ModelArray": "100,102,104",
+    "WindSpeedArray": "132,134,136"
+  },
+  "2969": {
+    "RemoteId": "2969",
+    "Frequency": "38000",
+    "CmdLen": "74",
+    "OnoffArray": "10,48",
+    "TempArray": "20,22,24,26",
+    "ModelArray": "4,6,8",
+    "WindSpeedArray": "12,14"
+  },
+  "2970": {
+    "RemoteId": "2970",
+    "Frequency": "38000",
+    "CmdLen": "280",
+    "OnoffArray": "10,138,150",
+    "TempArray": "20,22,24,26,160,162,164,166",
+    "ModelArray": "4,6,8,144,146,148",
+    "WindSpeedArray": "12,14,152,154,256,258,260"
+  },
+  "2997": {
+    "RemoteId": "2997",
+    "Frequency": "38000",
+    "CmdLen": "584",
+    "OnoffArray": "94,272,386,564",
+    "TempArray": "116,118,120,408,410,412",
+    "ModelArray": "106,108,110,134,136,398,400,402,426,428",
+    "WindSpeedArray": "148,150,152,440,442,444"
+  },
+  "3022": {
+    "RemoteId": "3022",
+    "Frequency": "38000",
+    "CmdLen": "228",
+    "OnoffArray": "88,216,218",
+    "TempArray": "116,118,120,122",
+    "ModelArray": "100,102,104",
+    "WindSpeedArray": "132,134,136"
+  },
+  "3037": {
+    "RemoteId": "3037",
+    "Frequency": "38000",
+    "CmdLen": "228",
+    "OnoffArray": "87,88,217,218",
+    "TempArray": "115,116,117,118,119,120",
+    "ModelArray": "99,100,101,102,103,104",
+    "WindSpeedArray": "131,132,133,134,135,136"
+  },
+  "3232": {
+    "RemoteId": "3232",
+    "Frequency": "38690",
+    "CmdLen": "198",
+    "OnoffArray": "102,118",
+    "TempArray": "132,134,136,138,148,150,152,154",
+    "ModelArray": "142,144,146,158,160,162",
+    "WindSpeedArray": "110,112,126,128"
+  },
+  "3327": {
+    "RemoteId": "3327",
+    "Frequency": "38000",
+    "CmdLen": "102",
+    "OnoffArray": "42,58",
+    "TempArray": "44,46,48,60,62,64",
+    "ModelArray": "36,38,40,52,54,56",
+    "WindSpeedArray": "14,16,30,32"
+  },
+  "3482": {
+    "RemoteId": "3482",
+    "Frequency": "38000",
+    "CmdLen": "60",
+    "OnoffArray": "19,20,21,22,29,30,39,40,45,46,49,50",
+    "TempArray": "35,36,37,38,39,40,41,42",
+    "ModelArray": "29,30,31,32,33,34",
+    "WindSpeedArray": "45,46,47,48,49,50"
+  },
+  "4187": {
+    "RemoteId": "4187",
+    "Frequency": "38000",
+    "CmdLen": "84",
+    "OnoffArray": "28,42,74",
+    "TempArray": "52,54,56,58,60,62",
+    "ModelArray": "36,38,40,42",
+    "WindSpeedArray": "46,48"
+  },
+  "4190": {
+    "RemoteId": "4190",
+    "Frequency": "38000",
+    "CmdLen": "228",
+    "OnoffArray": "88,216,218",
+    "TempArray": "116,118,120,122",
+    "ModelArray": "100,102,104",
+    "WindSpeedArray": "132,134,136"
+  },
+  "4332": {
+    "RemoteId": "4332",
+    "Frequency": "38000",
+    "CmdLen": "276",
+    "OnoffArray": "83,84,85,86,141,142",
+    "TempArray": "101,102,103,104,105,106,107,108,109,110,261,262",
+    "ModelArray": "95,96,97,98",
+    "WindSpeedArray": "87,88,89,90"
+  },
+  "4370": {
+    "RemoteId": "4370",
+    "Frequency": "38000",
+    "CmdLen": "228",
+    "OnoffArray": "88,216,218",
+    "TempArray": "116,118,120,122",
+    "ModelArray": "100,102,104",
+    "WindSpeedArray": "132,134,136"
+  },
+  "4646": {
+    "RemoteId": "4646",
+    "Frequency": "37900",
+    "CmdLen": "440",
+    "OnoffArray": "216,424",
+    "TempArray": "234,236,238,240,426,428,430",
+    "ModelArray": "224,226,228",
+    "WindSpeedArray": "272,274,276,278"
+  },
+  "4658": {
+    "RemoteId": "4658",
+    "Frequency": "38000",
+    "CmdLen": "200",
+    "OnoffArray": "36,38,40,46,68,70,72,76,78",
+    "TempArray": "68,70,72,74",
+    "ModelArray": "76,78",
+    "WindSpeedArray": "36,38,40"
+  },
+  "4727": {
+    "RemoteId": "4727",
+    "Frequency": "38000",
+    "CmdLen": "228",
+    "OnoffArray": "88,216",
+    "TempArray": "116,118,120,122",
+    "ModelArray": "100,102,104,106",
+    "WindSpeedArray": "132,134,136"
+  },
+  "4852": {
+    "RemoteId": "4852",
+    "Frequency": "38000",
+    "CmdLen": "68",
+    "OnoffArray": "36",
+    "TempArray": "36,38,40,42,58",
+    "ModelArray": "20,22",
+    "WindSpeedArray": "28,30"
+  },
+  "4957": {
+    "RemoteId": "4957",
+    "Frequency": "38690",
+    "CmdLen": "212",
+    "OnoffArray": "157,158",
+    "TempArray": "25,26,27,28,29,30,31,32,33,34,201,202,203",
+    "ModelArray": "109,110,111,112,113,114",
+    "WindSpeedArray": "77,78,79,80,81,82"
+  },
+  "5277": {
+    "RemoteId": "5277",
+    "Frequency": "37900",
+    "CmdLen": "244",
+    "OnoffArray": "96,9",
+    "TempArray": "20,22,24,26,28",
+    "ModelArray": "76,78,80",
+    "WindSpeedArray": "68,70"
+  },
+  "5997": {
+    "RemoteId": "5997",
+    "Frequency": "38000",
+    "CmdLen": "272",
+    "OnoffArray": "36,42,52,58",
+    "TempArray": "4,6,8,10,20,22,24,26",
+    "ModelArray": "4,10,20,26",
+    "WindSpeedArray": "12,14,16,18,28,30,32,34"
+  },
+  "7202": {
+    "RemoteId": "7202",
+    "Frequency": "38000",
+    "CmdLen": "100",
+    "OnoffArray": "88,90",
+    "TempArray": "72,74,76,78",
+    "ModelArray": "",
+    "WindSpeedArray": "88,90"
+  },
+  "7267": {
+    "RemoteId": "7267",
+    "Frequency": "38000",
+    "CmdLen": "228",
+    "OnoffArray": "87,88,215,216",
+    "TempArray": "115,116,117,118,119,120",
+    "ModelArray": "99,100,101,102,103,104",
+    "WindSpeedArray": "131,132,133,134,135,136"
+  },
+  "7352": {
+    "RemoteId": "7352",
+    "Frequency": "38000",
+    "CmdLen": "196",
+    "OnoffArray": "96,98",
+    "TempArray": "20,22,24,26,184,186",
+    "ModelArray": "76,78,80",
+    "WindSpeedArray": "68,70"
+  },
+  "7807": {
+    "RemoteId": "7807",
+    "Frequency": "37860",
+    "CmdLen": "150",
+    "OnoffArray": "36",
+    "TempArray": "22,24,26,28,140",
+    "ModelArray": "102,104,106",
+    "WindSpeedArray": "86,88"
+  },
+  "9357": {
+    "RemoteId": "9357",
+    "Frequency": "37910",
+    "CmdLen": "440",
+    "OnoffArray": "216,424",
+    "TempArray": "234,236,238,240,430",
+    "ModelArray": "224,226,228,242,244,246",
+    "WindSpeedArray": "272,274,276,278"
+  },
+  "9377": {
+    "RemoteId": "9377",
+    "Frequency": "38000",
+    "CmdLen": "212",
+    "OnoffArray": "156,158",
+    "TempArray": "26,28,30,32,34,202",
+    "ModelArray": "110,112,114",
+    "WindSpeedArray": "78,80,82"
+  },
+  "9502": {
+    "RemoteId": "9502",
+    "Frequency": "38000",
+    "CmdLen": "148",
+    "OnoffArray": "10",
+    "TempArray": "20,22,24,26,28,30",
+    "ModelArray": "4,6",
+    "WindSpeedArray": "36,38"
+  },
+  "10502": {
+    "RemoteId": "10502",
+    "Frequency": "38000",
+    "CmdLen": "584",
+    "OnoffArray": "360,568",
+    "TempArray": "378,380,382,384",
+    "ModelArray": "368,370,372,386,388,390",
+    "WindSpeedArray": "416,418,420,422"
+  },
+  "10577": {
+    "RemoteId": "10577",
+    "Frequency": "38000",
+    "CmdLen": "102",
+    "OnoffArray": "42,58",
+    "TempArray": "44,46,48,50,60,62,64,66",
+    "ModelArray": "36,38,40,52,54,56",
+    "WindSpeedArray": "14,16,30,32"
+  },
+  "10727": {
+    "RemoteId": "10727",
+    "Frequency": "38000",
+    "CmdLen": "280",
+    "OnoffArray": "150",
+    "TempArray": "160,162,164,166",
+    "ModelArray": "144,146,148",
+    "WindSpeedArray": "152,154"
+  },
+  "10737": {
+    "RemoteId": "10737",
+    "Frequency": "38000",
+    "CmdLen": "200",
+    "OnoffArray": "36,38,40,46,68,70,72,76,78",
+    "TempArray": "68,70,72,74",
+    "ModelArray": "76,78",
+    "WindSpeedArray": "36,38,40"
+  },
+  "11002": {
+    "RemoteId": "11002",
+    "Frequency": "38000",
+    "CmdLen": "212",
+    "OnoffArray": "154,170",
+    "TempArray": "156,158,160,162,172,174,176,178",
+    "ModelArray": "148,150,152,164,166,168",
+    "WindSpeedArray": "126,128,130,142,144,146"
+  },
+  "11092": {
+    "RemoteId": "11092",
+    "Frequency": "38300",
+    "CmdLen": "148",
+    "OnoffArray": "20,132",
+    "TempArray": "30,34,58,60",
+    "ModelArray": "58,102,104,106,132,134",
+    "WindSpeedArray": "112,114"
+  },
+  "11217": {
+    "RemoteId": "11217",
+    "Frequency": "38000",
+    "CmdLen": "230",
+    "OnoffArray": "70,72",
+    "TempArray": "22,24,26,28,220",
+    "ModelArray": "22,70,118,120,122",
+    "WindSpeedArray": "86,88,90"
+  },
+  "11232": {
+    "RemoteId": "11232",
+    "Frequency": "38000",
+    "CmdLen": "532",
+    "OnoffArray": "444,460",
+    "TempArray": "216,218,220,222,232,234,236,238",
+    "ModelArray": "404,406,408,420,422,424",
+    "WindSpeedArray": "412,414,416,428,430,432"
+  },
+  "11247": {
+    "RemoteId": "11247",
+    "Frequency": "38680",
+    "CmdLen": "132",
+    "OnoffArray": "14,16,18",
+    "TempArray": "36,38,40,42,122",
+    "ModelArray": "16,20,22,24",
+    "WindSpeedArray": "28,30"
+  },
+  "11272": {
+    "RemoteId": "11272",
+    "Frequency": "37900",
+    "CmdLen": "200",
+    "OnoffArray": "36,38,40,46,68,70,72,76,78",
+    "TempArray": "68,70,72,74",
+    "ModelArray": "76,78",
+    "WindSpeedArray": "36,38,40"
+  },
+  "11717": {
+    "RemoteId": "11717",
+    "Frequency": "38700",
+    "CmdLen": "344",
+    "OnoffArray": "38,216",
+    "TempArray": "60,62,64,66",
+    "ModelArray": "52,54,56",
+    "WindSpeedArray": "36,38,214,216"
+  },
+  "11737": {
+    "RemoteId": "11737",
+    "Frequency": "38100",
+    "CmdLen": "84",
+    "OnoffArray": "10",
+    "TempArray": "20,22,24,26",
+    "ModelArray": "4,6",
+    "WindSpeedArray": "36,38"
+  },
+  "11797": {
+    "RemoteId": "11797",
+    "Frequency": "38000",
+    "CmdLen": "100",
+    "OnoffArray": "64",
+    "TempArray": "60,62,64,66",
+    "ModelArray": "52,54,56",
+    "WindSpeedArray": "36,38,62"
+  },
+  "11802": {
+    "RemoteId": "11802",
+    "Frequency": "38000",
+    "CmdLen": "212",
+    "OnoffArray": "158",
+    "TempArray": "26,28,30,32,34,202",
+    "ModelArray": "110,112,114",
+    "WindSpeedArray": "78,80,82"
+  },
+  "11832": {
+    "RemoteId": "11832",
+    "Frequency": "38000",
+    "CmdLen": "212",
+    "OnoffArray": "158",
+    "TempArray": "26,28,30,32,34,202",
+    "ModelArray": "110,112,114",
+    "WindSpeedArray": "78,80,82"
+  },
+  "11837": {
+    "RemoteId": "11837",
+    "Frequency": "37900",
+    "CmdLen": "200",
+    "OnoffArray": "36,38,40,46,68,70,72,76,78",
+    "TempArray": "68,70,72,74",
+    "ModelArray": "76,78",
+    "WindSpeedArray": "36,38,40"
+  },
+  "11842": {
+    "RemoteId": "11842",
+    "Frequency": "37900",
+    "CmdLen": "228",
+    "OnoffArray": "88,216,218",
+    "TempArray": "116,118,120,122",
+    "ModelArray": "100,102,104",
+    "WindSpeedArray": "132,134,136"
+  },
+  "11937": {
+    "RemoteId": "11937",
+    "Frequency": "38000",
+    "CmdLen": "200",
+    "OnoffArray": "36,38,40,46,68,70,72,76,78",
+    "TempArray": "68,70,72,74",
+    "ModelArray": "76,78",
+    "WindSpeedArray": "36,38,40"
+  }
+}

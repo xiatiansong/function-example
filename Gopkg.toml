@@ -1,0 +1,6 @@
+[[constraint]]
+  name = "github.com/aiquestion/go-simplejson"
+  revision = "900659f4902c7613a62beee55b6124eaa5285a96"
+[[constraint]]
+  name = "github.com/smartystreets/goconvey"
+  version = "1.6.3"
