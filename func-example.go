@@ -23,12 +23,17 @@ func handle(event map[string]interface{}, context map[string]interface{}) (inter
 	decodeIrData := GoLumiHeatshrinkDecode(zipData)
 	fmt.Println(decodeIrData)
 
+	//提取特征值和压缩值
+
+	//验证特征值和压缩值在范围内
+
+	//根据配置得到提取值
+
+	//查询数据库
 	//bean, err := miot.QueryIrThirdDb(evt.Token, evt.data)
 	//if err != nil {
 		//return nil, err
 	//}
-
-	// 业务逻辑
 
 	return fmt.Sprintf("bean:%v", ""), nil
 }
