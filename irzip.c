@@ -179,30 +179,50 @@ static bool Ir_Rx_Preprocess_Zip1(tsIrRxParam_t *psIrRxParam, tsLumi_IrProtocol 
 }
 
 
+static void irzip(uint16_t *pu16IrData, uint16_t u16IrLen, uint16_t *pu16ChararistorUnit, uint8_t *pu8ChararistorNum, uint8_t *pu8ZipData, uint16_t *pu16ZipDataNum)
+{
+	int i;
+	tsIrRxParam_t sIrRxParam={0};
+	tsLumi_IrProtocol sPreFmt;
+
+	for(i=0; i < u16IrLen; i++)
+	{
+		sIrRxParam.au16DataBuf[i] = pu16IrData[i];
+	}
+
+	sIrRxParam.u16Len = u16IrLen;
+	if(true == Ir_Rx_RawData_Preprocess(&sIrRxParam, &sPreFmt))
+		Ir_Rx_Preprocess_Zip1(&sIrRxParam, &sPreFmt);
+
+	for(i=0;i<sPreFmt.u8ChararistorNum;i++)
+		pu16ChararistorUnit[i] = sPreFmt.au16ChararistorUnit[i];
+	*pu8ChararistorNum = sPreFmt.u8ChararistorNum;
+
+	for(i=0;i<sPreFmt.u16ZipDataNum;i++)
+		pu8ZipData[i] = sPreFmt.au8ZipData[i];
+	*pu16ZipDataNum = sPreFmt.u16ZipDataNum;
+}
+
 int main(void)
 {
 	int i;
 	uint16_t au16DataBuf[MAX_IR_RX_LEN]={3484,1690,442,1248,442,442,442,442,442,3484,1690,442,1248,442,442,442,442,442,3484,1690,442,1248,442,442,442,442};
-	tsIrRxParam_t psIrRxParam={0};
-	tsLumi_IrProtocol pPreFmt={0};
+	uint16_t au16ChararistorUnit[MAX_CHARARISTOR_UNIT] = {0};
+	uint8_t u8ChararistorNum;
+	uint8_t au8ZipData[MAX_ZIP_UNIT];
+	uint16_t u16ZipDataNum;
 
-	for(i=0;0!=au16DataBuf[i];i++)
+	for (i=0; 0!=au16DataBuf[i]; i++);
+	irzip(au16DataBuf, i, au16ChararistorUnit, &u8ChararistorNum, au8ZipData, &u16ZipDataNum);
+
+	for(i=0;i<u8ChararistorNum;i++)
 	{
-		psIrRxParam.au16DataBuf[i] = au16DataBuf[i];
+		printf("Chararistor[%d]=%d\n", i, au16ChararistorUnit[i]);
 	}
 
-	psIrRxParam.u16Len = i;
-	if(true == Ir_Rx_RawData_Preprocess(&psIrRxParam, &pPreFmt))
-		Ir_Rx_Preprocess_Zip1(&psIrRxParam, &pPreFmt);
-
-	for(i=0;i<pPreFmt.u8ChararistorNum;i++)
+	for(i=0;i<u16ZipDataNum;i++)
 	{
-		printf("Chararistor[%d]=%d\n", i, pPreFmt.au16ChararistorUnit[i]);
-	}
-
-	for(i=0;i<pPreFmt.u16ZipDataNum;i++)
-	{
-		printf("%.2x", pPreFmt.au8ZipData[i]);
+		printf("%.2x", au8ZipData[i]);
 	}
 	printf("\n");
 
