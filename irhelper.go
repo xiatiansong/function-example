@@ -6,6 +6,7 @@ package main
 #include "heatshrink_config.h"
 #include "heatshrink_decoder.h"
 #include "heatshrink_encoder.h"
+#include "irzip.c"
 #include <stdlib.h>
 */
 import "C"
@@ -13,7 +14,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"strconv"
+	"strings"
 	"sync"
+	"unsafe"
 )
 
 type IrRemoteCfg struct {
@@ -54,12 +58,36 @@ func GoLumiHeatshrinkDecode(decode_in_buf string) string {
 
 	ret := C.LumiHeatshrinkBase64Decode(cs, C.int(decode_len), (*C.char)(p))
 	ret_len := (int)(ret)
-	fmt.Println("*******GoLumiHeatshrinkBase64Decode len:", ret_len)
 	if ret_len > 0 {
 		data := C.GoStringN((*C.char)(p), ret)
 		return data
 	}
 	return ""
+}
+
+func GoLumiIrZip(ir_in_buf string) (string, string) {
+	cs := C.CString(ir_in_buf)
+	defer C.free(unsafe.Pointer(cs))
+
+	chararistorData := C.malloc(C.size_t(C.MAX_CHARARISTOR_UNIT*4 + 1))
+	zipData := C.malloc(C.size_t(C.MAX_ZIP_UNIT*2 + 1))
+	defer C.free(chararistorData)
+	defer C.free(zipData)
+
+	C.irzip(cs, (*C.char)(chararistorData), (*C.char)(zipData))
+	chaRetData := C.GoString((*C.char)(chararistorData))
+	zipRetData := C.GoString((*C.char)(zipData))
+	return chaRetData, zipRetData
+}
+
+func extractArray(cmdData string, temp string) string {
+	var substring = ""
+	indexArray := strings.Split(temp, ",");
+	for _, value := range indexArray {
+		index, _ := strconv.ParseInt(value, 10, 32)
+		substring += string(cmdData[index-1])
+	}
+	return substring
 }
 
 func GetInstance() *map[string]IrRemoteCfg {

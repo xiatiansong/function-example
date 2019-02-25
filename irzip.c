@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 typedef unsigned char		uint8_t;
 typedef unsigned short int	uint16_t;
 typedef unsigned int		uint32_t;
-typedef unsigned long long int	uint64_t;
+//typedef unsigned long long int	uint64_t;
 
 #define MAX_CHARARISTOR_UNIT 		12
 #define MAX_ZIP_UNIT				1500
@@ -83,14 +85,7 @@ static bool Ir_Rx_RawData_Preprocess(tsIrRxParam_t *psIrRxParam, tsLumi_IrProtoc
 
 		if(u16TempMin == 0xFFFF)
 			break;
-		if(pPreFmt->u8ChararistorNum == 0)
-		{
-			u16DeltValue = u16TempMin/2;
-		}
-		else
-		{
-			u16DeltValue = u16TempMin/3;
-		}
+		u16DeltValue = u16TempMin*0.3;
 		//calulate average value
 		u32Sum = 0;
 		u16Count = 0;
@@ -165,66 +160,47 @@ static bool Ir_Rx_Preprocess_Zip1(tsIrRxParam_t *psIrRxParam, tsLumi_IrProtocol 
 		pPreFmt->au8ZipData[i1] |= u8Index;
 	}
 
-#if 0
-	wmprintf("au8ZipUnit[%d]: ", pPreFmt->u16ZipDataNum);
-	uint32_t u32Sum = 0;
-	for(i1=0; i1<pPreFmt->u16ZipDataNum; i1++)
-	{
-		wmprintf(" %02x ",  pPreFmt->au8ZipData[i1]);
-		u32Sum += pPreFmt->au8ZipData[i1];
-	}
-	wmprintf(" %d\r\n", u32Sum);
-#endif
 	return true;
 }
 
 
-static void irzip(uint16_t *pu16IrData, uint16_t u16IrLen, uint16_t *pu16ChararistorUnit, uint8_t *pu8ChararistorNum, uint8_t *pu8ZipData, uint16_t *pu16ZipDataNum)
+static void irzip(char *pi8IrData, char *pi8ChararistorUnit, char *pi8ZipData)
 {
 	int i;
 	tsIrRxParam_t sIrRxParam={0};
 	tsLumi_IrProtocol sPreFmt;
+	char *pre = pi8IrData, *next, Buf[10] = {0};
 
-	for(i=0; i < u16IrLen; i++)
+	i = 0;
+	while(1)
 	{
-		sIrRxParam.au16DataBuf[i] = pu16IrData[i];
+		next = strstr(pre, ",");
+		if (next && next != pre)
+		{
+			memset(Buf, 0, 10);
+			strncpy(Buf, pre, next-pre);
+			next++;
+			pre = next;
+			sIrRxParam.au16DataBuf[i++] = atoi(Buf);
+		}
+		else
+		{
+			sIrRxParam.au16DataBuf[i++] = 50000;
+			break;
+		}
 	}
 
-	sIrRxParam.u16Len = u16IrLen;
+	sIrRxParam.u16Len = i;
 	if(true == Ir_Rx_RawData_Preprocess(&sIrRxParam, &sPreFmt))
+	{
 		Ir_Rx_Preprocess_Zip1(&sIrRxParam, &sPreFmt);
 
-	for(i=0;i<sPreFmt.u8ChararistorNum;i++)
-		pu16ChararistorUnit[i] = sPreFmt.au16ChararistorUnit[i];
-	*pu8ChararistorNum = sPreFmt.u8ChararistorNum;
+		for(i=0;i<sPreFmt.u8ChararistorNum;i++)
+			sprintf(pi8ChararistorUnit+4*i, "%.4X", sPreFmt.au16ChararistorUnit[i]);
+		pi8ChararistorUnit[4*i] = '\0';
 
-	for(i=0;i<sPreFmt.u16ZipDataNum;i++)
-		pu8ZipData[i] = sPreFmt.au8ZipData[i];
-	*pu16ZipDataNum = sPreFmt.u16ZipDataNum;
-}
-
-int main(void)
-{
-	int i;
-	uint16_t au16DataBuf[MAX_IR_RX_LEN]={3484,1690,442,1248,442,442,442,442,442,3484,1690,442,1248,442,442,442,442,442,3484,1690,442,1248,442,442,442,442};
-	uint16_t au16ChararistorUnit[MAX_CHARARISTOR_UNIT] = {0};
-	uint8_t u8ChararistorNum;
-	uint8_t au8ZipData[MAX_ZIP_UNIT];
-	uint16_t u16ZipDataNum;
-
-	for (i=0; 0!=au16DataBuf[i]; i++);
-	irzip(au16DataBuf, i, au16ChararistorUnit, &u8ChararistorNum, au8ZipData, &u16ZipDataNum);
-
-	for(i=0;i<u8ChararistorNum;i++)
-	{
-		printf("Chararistor[%d]=%d\n", i, au16ChararistorUnit[i]);
+		for(i=0;i<sPreFmt.u16ZipDataNum;i++)
+			sprintf(pi8ZipData+2*i, "%.2x", sPreFmt.au8ZipData[i]);
+		pi8ZipData[2*i] = '\0';
 	}
-
-	for(i=0;i<u16ZipDataNum;i++)
-	{
-		printf("%.2x", au8ZipData[i]);
-	}
-	printf("\n");
-
-	return 0;
 }
