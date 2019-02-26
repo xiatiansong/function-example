@@ -84,3 +84,29 @@ var test_context = map[string]interface{}{
 	"functionName": "test_func",
 	"timeout":      30,
 }
+
+func TestIrSync(t *testing.T) {
+	Convey("test sync ir", t, func() {
+		propInput := map[string]interface{}{
+			"token": "testtoken",
+			"data": map[string]interface{}{
+				"did": "85671432",
+				"model": "lumi.acpartner.mcn02",
+				"method": "get_ir_data",
+				"params": map[string]interface{}{
+					"did": "85671432",
+					"model": "lumi.acpartner.mcn02",
+					"brand_id": "97",
+					"controller_id": "10727",
+					"param_type": "ir_code",
+					"zip_data": "nE5nExlk0mswmUsms5m8smM2nE4AIKayyazibABkAWYDBzUBgpzMQEGmYEDTcBhgFEAtMBAwHCAHMAMgMSAtYCBJgAgYHTgrsBigHLgHsD+4Qbg1OC64KETIFA5lLJtMQDCmwDFAaIBYYV7gsGGo4NCgcIGyoEhABkAgoMVgMIFmgf6g5xOZyCJoFZzAC+JrOAujDmUFRgDDFHcCgwjmD7cBNAQHADMCdwD2mwQhTeZAqmDCwDkCESAmk2mMsm0yBgYGiwVPA/sE+wuUCQMC+wA3EqkD+ZlLJnOZzNprLJxOZvNyQTCjUPUgRHEOMAsxUlH+UdJwpaHGYBgpsBzZIMBbyAgQhDhQWGR44zhaOAuwkEBkOFYgKDiu0WywNECi4SqoHChRnN5gBiYCKA5uBk4A5kDIB+4YrTmcgioIS4PtgZGXo5nth3Oa8xVsAfmPXYH7neOB+5LlAT+B/4H/g3uD/g5NgL+F/JBany0AgSDkHptMAACA",
+				},
+			},
+		}
+		res, err := handle(propInput, test_context)
+		So(err, ShouldBeNil)
+		resS, _ := json.Marshal(res)
+		fmt.Printf("\r\n%s\r\n", resS)
+	})
+
+}

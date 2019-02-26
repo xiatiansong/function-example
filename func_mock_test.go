@@ -180,7 +180,7 @@ func (m *MockMiotClient) RpcDevice(token, did string, method string, params *sim
 }
 
 func (m *MockMiotClient) QueryIrThirdDb(token string, req *IrThirdDbBean) (*IrThirdDbBean, error) {
-	return nil, nil
+	return &IrThirdDbBean{RemoteId: req.RemoteId, ShortCmd: "11311701"}, nil
 }
 
 func (m *MockMiotClient) ReportEvent(token, did string, eventinfo []*Eventinfo) error {
