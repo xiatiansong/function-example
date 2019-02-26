@@ -1,12 +1,15 @@
 package heatshrink
 
 /*
+#cgo CFLAGS: -I./
+#cgo LDFLAGS: -L./ -lheatshrink
+#cgo LDFLAGS: -L./ -lirzip
 #include "heatshrink_app.h"
 #include "heatshrink_common.h"
 #include "heatshrink_config.h"
 #include "heatshrink_decoder.h"
 #include "heatshrink_encoder.h"
-#include "irzip.c"
+#include "irzip.h"
 #include <stdlib.h>
 */
 import "C"
@@ -44,7 +47,7 @@ func GoLumiHeatshrinkEncode(encode_in_buf string) string {
 	p := C.malloc(C.size_t(len(encode_in_buf)))
 	defer C.free(p)
 
-	ret := C.LumiHeatshrinkBase64Encode(cs, C.int(encode_len), (*C.char)(p))
+	ret :=  C.LumiHeatshrinkBase64Encode(cs, C.int(encode_len), (*C.char)(p))
 	ret_len := (int)(ret)
 	if ret_len > 0 && ret_len < encode_len {
 		data := C.GoStringN((*C.char)(p), ret)
@@ -164,6 +167,7 @@ func ShortCmdToAcKey(shortCmd string) string {
  */
 func GetInstance() *map[string]IrRemoteCfg {
 	once.Do(func() {
+
 		instance, _ = readFile("heatshrink/ir_sync_cfg.json")
 	})
 	return instance
